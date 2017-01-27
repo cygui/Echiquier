@@ -3,8 +3,23 @@
  */
 public class Roi extends Piece {
 
-    public Roi(Position position, char couleur, int valeur) {
-        super(position, couleur, valeur);
+    public Roi(Position position, char couleur) {
+        super(position, couleur);
+    }
+
+    @Override
+    public char getSymbole() {
+        return 'R';
+    }
+
+    @Override
+    public int getValeur() {
+        return 20;
+    }
+
+    @Override
+    public boolean positionPossible() {
+        return true;
     }
 
 

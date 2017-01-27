@@ -1,4 +1,4 @@
-import java.io.Serializable;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,5 +36,27 @@ public class Echiquier implements Serializable {
 
     public void setJeux(List<Piece> jeux) {
         this.jeux = jeux;
+    }
+
+    public void sauvegarde() {
+        ObjectOutputStream objectOutputStream;
+        try {
+            objectOutputStream = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(new File("form.txt"))));
+            objectOutputStream.writeObject(this.jeux);
+            objectOutputStream.close();
+        }
+        catch(IOException  e){ e.printStackTrace();};
+    }
+
+
+
+    public void chargement(){
+        ObjectInputStream objectInputStream;
+        try {
+        objectInputStream = new ObjectInputStream(new BufferedInputStream(new FileInputStream(new File("form.txt"))));
+        System.out. println (((ArrayList)objectInputStream.readObject()));
+        objectInputStream. close () ;
+    }
+    catch (IOException | ClassNotFoundException  e) { e.printStackTrace () ; };
     }
 }

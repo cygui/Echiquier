@@ -3,7 +3,22 @@
  */
 public class Pion extends Piece  {
 
-    public Pion(Position position, char couleur, int valeur) {
-        super(position, couleur, valeur);
+    public Pion(Position position, char couleur) {
+        super(position, couleur);
+    }
+
+    @Override
+    public char getSymbole() {
+        return 'P';
+    }
+
+    @Override
+    public int getValeur() {
+        return 1;
+    }
+
+    @Override
+    public boolean positionPossible() {
+        return true;
     }
 }

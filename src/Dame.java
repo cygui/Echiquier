@@ -3,7 +3,22 @@
  */
 public class Dame extends Piece  {
 
-    public Dame(Position position, char couleur, int valeur) {
-        super(position, couleur, valeur);
+    public Dame(Position position, char couleur) {
+        super(position, couleur);
+    }
+
+    @Override
+    public char getSymbole() {
+        return 'D';
+    }
+
+    @Override
+    public int getValeur() {
+        return 9;
+    }
+
+    @Override
+    public boolean positionPossible() {
+        return true;
     }
 }

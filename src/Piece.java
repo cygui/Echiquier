@@ -6,14 +6,12 @@ import java.io.Serializable;
 
 public abstract class Piece implements Serializable {
 
-    public Position position;
-    public char couleur;
-    public int valeur;
+    protected Position position;
+    protected char couleur;
 
-    public Piece(Position position, char couleur, int valeur) {
+    public Piece(Position position, char couleur) {
         this.position = position;
         this.couleur = couleur;
-        this.valeur = valeur;
     }
 
     public Position getPosition() {
@@ -32,24 +30,18 @@ public abstract class Piece implements Serializable {
         this.couleur = couleur;
     }
 
-    public void setValeur(int valeur) {
-        this.valeur = valeur;
-    }
+    public abstract char getSymbole();
 
-    public boolean positionPossible(Position p){
+    public abstract int getValeur();
+
+    public abstract boolean positionPossible();
+
+    public boolean positionPossible(Position position){
         return true;
     }
 
 
-    public char getSymbol(){
-        return 'Z';
-    }
-
-    public byte getValeur(){
-        return 0;
-    }
-
-    public void deplacement(Position p){
+    public void deplacement(Position position){
 
     }
 
