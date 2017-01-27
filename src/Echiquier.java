@@ -8,8 +8,8 @@ public class Echiquier {
 
     private static Echiquier monEchiquier;
     List<Piece> jeux = new ArrayList<Piece>();
-    private Echiquier(){
 
+    private Echiquier(){
 
     }
 

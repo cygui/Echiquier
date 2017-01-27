@@ -3,6 +3,25 @@
  */
 public abstract class Piece {
 
-    boolean positionPossible
+
+    public boolean positionPossible(Position p){
+        return true;
+    }
+
+    public char getSymbol(){
+        return 'R';
+    }
+
+    public byte getValeur(){
+        return 1;
+    }
+
+    public void deplacement(Position p){
+
+    }
+
+    public String toString(){
+        return "toto";
+    }
 
 }
