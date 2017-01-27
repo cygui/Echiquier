@@ -38,10 +38,16 @@ public class Echiquier implements Serializable {
         this.jeux = jeux;
     }
 
+    public void ajouterPiece(Piece piece){}
+
+    public Piece getPiece(Position position){return null ;}
+
+    public int getPoints(char couleur){return  0; }
+
     public void sauvegarde() {
         ObjectOutputStream objectOutputStream;
         try {
-            objectOutputStream = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(new File("form.txt"))));
+            objectOutputStream = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(new File("echiquier.txt"))));
             objectOutputStream.writeObject(this.jeux);
             objectOutputStream.close();
         }
@@ -53,7 +59,7 @@ public class Echiquier implements Serializable {
     public void chargement(){
         ObjectInputStream objectInputStream;
         try {
-        objectInputStream = new ObjectInputStream(new BufferedInputStream(new FileInputStream(new File("form.txt"))));
+        objectInputStream = new ObjectInputStream(new BufferedInputStream(new FileInputStream(new File("echiquier.txt"))));
         System.out. println (((ArrayList)objectInputStream.readObject()));
         objectInputStream. close () ;
     }
