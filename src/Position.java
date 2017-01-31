@@ -8,8 +8,12 @@ public class Position implements Serializable {
     private byte x;
     private byte y;
 
-    boolean equals(Position p){
-    return true;
+    public boolean equals(Position p){
+        if(this.x== p.x && this.y == p.y)
+        {   return true;
+        }else{
+            return false;
+        }
 
     }
 
@@ -23,7 +27,8 @@ public class Position implements Serializable {
     }
 
     public void setX(byte x) {
-        this.x = x;
+        if(x<7 && x>0 ){
+        this.x = x;}
     }
 
     public byte getY() {
@@ -31,6 +36,7 @@ public class Position implements Serializable {
     }
 
     public void setY(byte y) {
-        this.y = y;
+        if(y<7 && y>0){
+            this.y = y;}
     }
 }
